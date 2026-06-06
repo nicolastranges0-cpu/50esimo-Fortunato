@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Big 50 of Lucky 👑</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Bebas+Neue&family=Josefin+Sans:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --gold:#c9a84c; --gold-l:#f0d080; --gold-d:#8a6a20; --gold-s:#ffe08a;
+  --forest:#1c3320; --forest-m:#2a4a30;
+  --kraft:#b89050; --kraft-l:#d4b878;
+  --cream:#f8f0dc; --wood:#6b4020;
+  --dark:#0a1208;
+  --sh:0 8px 40px rgba(0,0,0,0.6);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Josefin Sans',sans-serif;background:var(--dark);color:var(--cream);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(10,18,8,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-d);padding:12px 24px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Bebas Neue',sans-serif;color:var(--gold-l);font-size:1.2rem;letter-spacing:.15em;}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{color:rgba(212,184,120,.7);text-decoration:none;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:3px;transition:all .2s;}
+.nav-links a:hover{color:var(--gold-l);background:rgba(201,168,76,.1);}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 28px 70px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 5%,rgba(255,220,100,.15) 0%,transparent 40%),radial-gradient(ellipse at 85% 8%,rgba(255,200,80,.1) 0%,transparent 35%),linear-gradient(180deg,#0d1f0a 0%,#1a3a12 8%,#2a5a1a 16%,#4a7a20 24%,#8ab030 30%,#c8c030 36%,#e8a820 42%,#e07818 50%,#c85010 58%,#902010 68%,#601008 78%,#300808 88%,#100404 100%);z-index:0;}
+.hero-ocean{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(180deg,transparent 0%,rgba(20,60,80,.4) 30%,rgba(10,40,60,.7) 60%,rgba(5,20,40,.9) 100%);z-index:1;}
+.hero-ocean::after{content:'';position:absolute;bottom:20px;left:0;right:0;height:100px;background:repeating-linear-gradient(180deg,transparent 0px,transparent 6px,rgba(201,168,76,.06) 6px,rgba(201,168,76,.06) 7px);}
+.hero-rays{position:absolute;bottom:120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:conic-gradient(from 260deg at 50% 100%,transparent 0deg,rgba(232,168,32,.06) 2deg,transparent 4deg,transparent 8deg,rgba(232,168,32,.05) 10deg,transparent 12deg,transparent 18deg,rgba(232,168,32,.07) 20deg,transparent 22deg,transparent 28deg,rgba(232,168,32,.04) 30deg,transparent 32deg,transparent 38deg,rgba(232,168,32,.06) 40deg,transparent 42deg,transparent 80deg);z-index:1;pointer-events:none;}
+.hero-sun{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);width:80px;height:40px;background:radial-gradient(ellipse at 50% 100%,#ffe080 0%,#f0a820 50%,transparent 100%);z-index:2;filter:blur(6px);}
+.palms-svg{position:absolute;bottom:0;left:0;right:0;height:280px;z-index:3;pointer-events:none;}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(0,0,0,.55) 100%),linear-gradient(180deg,rgba(0,0,0,.3) 0%,transparent 30%,transparent 60%,rgba(0,0,0,.5) 100%);z-index:4;pointer-events:none;}
+.hero-content{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;}
+
+.ornament{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.ornament-line{width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.ornament-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--gold);}
+
+.sticker-left{position:absolute;top:-30px;left:-20px;background:var(--cream);border:2px solid var(--wood);padding:10px 14px;transform:rotate(-7deg);box-shadow:3px 3px 0 rgba(0,0,0,.4);max-width:120px;z-index:6;}
+.sticker-left p{font-family:'Bebas Neue',sans-serif;font-size:.8rem;color:var(--forest);letter-spacing:.05em;line-height:1.3;text-align:center;}
+.badge-right{position:absolute;top:-25px;right:-16px;width:100px;height:100px;border-radius:50%;background:var(--cream);border:2px solid var(--forest);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;transform:rotate(7deg);box-shadow:2px 2px 0 rgba(0,0,0,.4);z-index:6;}
+.badge-right p{font-family:'Josefin Sans',sans-serif;font-size:.45rem;font-weight:700;color:var(--forest);text-transform:uppercase;letter-spacing:.1em;line-height:1.4;}
+.badge-right strong{font-family:'Dancing Script',cursive;font-size:.7rem;color:var(--forest);}
+
+.title-the{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:clamp(.85rem,4vw,1.1rem);letter-spacing:.6em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 20px rgba(201,168,76,.5);margin-bottom:-8px;}
+.title-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(5.5rem,25vw,10rem);line-height:.85;letter-spacing:.05em;background:linear-gradient(180deg,var(--gold-s) 0%,var(--gold) 40%,var(--gold-d) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 4px 12px rgba(0,0,0,.8));}
+.title-of{display:inline-block;background:#c85010;color:white;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;padding:4px 18px;transform:rotate(-2deg);margin:2px 0 -4px;box-shadow:2px 2px 0 rgba(0,0,0,.5);}
+.title-50{font-family:'Bebas Neue',sans-serif;font-size:clamp(7rem,33vw,13rem);line-height:.78;letter-spacing:.02em;background:linear-gradient(180deg,#fff5c0 0%,var(--gold-l) 20%,var(--gold) 55%,var(--gold-d) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(3px 6px 0 rgba(0,0,0,.7)) drop-shadow(0 0 30px rgba(201,168,76,.3));}
+.title-lucky{font-family:'Dancing Script',cursive;font-size:clamp(2.8rem,13vw,5.5rem);color:var(--forest-m);text-shadow:2px 2px 0 var(--forest),-1px -1px 0 var(--forest);line-height:1;margin-top:-4px;}
+
+.hero-photo{margin-top:22px;width:230px;aspect-ratio:4/3;background:rgba(200,168,100,.15);border:3px solid rgba(201,168,76,.4);box-shadow:0 0 0 1px rgba(201,168,76,.2),var(--sh);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+.hero-name{margin-top:18px;text-align:center;}
+.hero-name .n1{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:clamp(1.1rem,5vw,1.6rem);letter-spacing:.4em;text-transform:uppercase;color:var(--kraft-l);text-shadow:0 2px 8px rgba(0,0,0,.6);}
+.hero-name .n2{font-family:'Dancing Script',cursive;font-size:clamp(1.6rem,7vw,2.6rem);color:var(--forest-m);text-shadow:2px 2px 0 var(--forest);}
+
+.hero-info{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;justify-content:center;}
+.info-pill{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);border-radius:4px;padding:8px 14px;text-align:center;}
+.info-pill .lbl{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--kraft);display:block;margin-bottom:2px;}
+.info-pill .val{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:.82rem;color:var(--gold-l);display:block;}
+.hero-scroll{margin-top:30px;color:rgba(201,168,76,.5);font-size:1.2rem;animation:bob 2s infinite ease-in-out;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* SECTIONS */
+.section-wrap{padding:60px 22px;}
+.section-inner{max-width:660px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:32px;}
+.section-tag{display:inline-block;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-d);padding:4px 14px;margin-bottom:12px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,8vw,3rem);letter-spacing:.08em;color:var(--gold-l);text-shadow:2px 2px 0 var(--gold-d);line-height:1;margin-bottom:10px;}
+.section-sub{font-size:.85rem;color:rgba(212,184,120,.65);line-height:1.75;font-weight:300;letter-spacing:.04em;}
+
+.gold-divider{display:flex;align-items:center;gap:14px;max-width:280px;margin:10px auto 28px;}
+.gold-divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);}
+.gold-divider-gem{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);}
+
+/* COUNTDOWN */
+.countdown-wrap{background:linear-gradient(180deg,#060e05,#0e1e0c);border-top:1px solid var(--gold-d);border-bottom:1px solid var(--gold-d);}
+.countdown-grid{display:flex;gap:10px;justify-content:center;margin-bottom:40px;}
+.cd-box{flex:1;max-width:82px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.25);padding:16px 8px;text-align:center;position:relative;}
+.cd-box::before,.cd-box::after{content:'';position:absolute;top:4px;bottom:4px;width:1px;background:linear-gradient(180deg,transparent,var(--gold-d),transparent);}
+.cd-box::before{left:4px;}.cd-box::after{right:4px;}
+.cd-num{display:block;font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,9vw,3.2rem);letter-spacing:.04em;background:linear-gradient(180deg,var(--gold-s) 0%,var(--gold) 60%,var(--gold-d) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:5px;}
+.cd-lbl{display:block;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--kraft);opacity:.7;}
+
+.signpost-grid{display:flex;flex-direction:column;gap:8px;max-width:280px;margin:0 auto;}
+.signpost{background:var(--forest-m);border:1px solid rgba(201,168,76,.25);padding:10px 20px;font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);display:flex;align-items:center;gap:12px;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);padding-right:28px;}
+.signpost:nth-child(even){clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);padding-left:28px;padding-right:20px;flex-direction:row-reverse;}
+.sp-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.quote-block{margin-top:32px;text-align:center;padding:16px;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);}
+.quote-block q{font-family:'Dancing Script',cursive;font-size:clamp(1rem,4vw,1.3rem);color:var(--gold);quotes:"\201C" "\201D";font-style:italic;}
+
+/* GALLERY */
+.gallery-wrap{background:#070f06;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.g-item{cursor:pointer;overflow:hidden;position:relative;}
+.g-item.tall{grid-row:span 2;}
+.g-item.wide{grid-column:span 2;}
+.g-inner{width:100%;height:100%;min-height:110px;position:relative;overflow:hidden;transition:transform .3s ease;}
+.g-item.tall .g-inner{min-height:230px;}
+.g-item.wide .g-inner{min-height:110px;}
+.g-item:hover .g-inner{transform:scale(1.04);}
+.g-inner img{width:100%;height:100%;object-fit:cover;display:block;}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.75) 100%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:8px;}
+.g-item:hover .g-overlay{opacity:1;}
+.g-label{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9);}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:1000;align-items:center;justify-content:center;padding:20px;}
+.lightbox.active{display:flex;}
+.lb-wrap{position:relative;max-width:92vw;max-height:88vh;}
+.lb-wrap img{max-width:90vw;max-height:82vh;display:block;object-fit:contain;border:1px solid var(--gold-d);box-shadow:0 0 60px rgba(201,168,76,.15);}
+.lb-close{position:absolute;top:-38px;right:0;background:none;border:1px solid var(--gold-d);color:var(--gold);font-size:.75rem;padding:5px 14px;cursor:pointer;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.1em;transition:background .2s;}
+.lb-close:hover{background:rgba(201,168,76,.1);}
+.lb-caption{text-align:center;margin-top:8px;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--kraft);opacity:.7;}
+
+/* GIFTS */
+.gifts-wrap{background:linear-gradient(180deg,#060e05,#0a1208);border-top:1px solid var(--gold-d);}
+.gifts-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:380px){.gifts-grid{grid-template-columns:1fr;}}
+.gift-card{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.2);display:flex;flex-direction:column;transition:border-color .25s,transform .25s;cursor:pointer;}
+.gift-card:hover{border-color:rgba(201,168,76,.6);transform:translateY(-3px);}
+.gift-card.special{border-color:rgba(201,168,76,.5);}
+.gift-img{height:110px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,.12);}
+.gift-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.gift-badge{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.8);color:var(--gold-l);font-family:'Josefin Sans',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border:1px solid rgba(201,168,76,.3);z-index:2;}
+.gift-body{padding:12px;flex:1;display:flex;flex-direction:column;}
+.gift-title{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;color:var(--cream);line-height:1.3;margin-bottom:6px;}
+.gift-desc{font-size:.7rem;color:rgba(212,184,120,.55);line-height:1.6;flex:1;margin-bottom:10px;font-weight:300;letter-spacing:.03em;}
+.btn-gift{display:block;width:100%;background:transparent;color:var(--gold);border:1px solid var(--gold-d);padding:9px;font-family:'Josefin Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-align:center;cursor:pointer;transition:background .2s,color .2s;}
+.btn-gift:hover{background:var(--gold-d);color:var(--cream);}
+.gift-card.special .btn-gift{border-color:var(--gold);color:var(--gold-l);}
+
+/* PRODUCT MODAL */
+.prod-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;align-items:flex-end;justify-content:center;padding:0;}
+.prod-modal.active{display:flex;}
+.prod-sheet{background:#0e1e0c;border:1px solid var(--gold-d);border-bottom:none;border-radius:20px 20px 0 0;width:100%;max-width:600px;max-height:88vh;overflow-y:auto;padding:0 0 40px;position:relative;}
+.prod-sheet-handle{width:36px;height:4px;background:rgba(201,168,76,.3);border-radius:2px;margin:12px auto 0;}
+.prod-sheet-close{position:absolute;top:14px;right:16px;background:none;border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.7rem;padding:4px 12px;cursor:pointer;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.1em;border-radius:3px;}
+.prod-img{width:100%;height:220px;object-fit:cover;border-bottom:1px solid rgba(201,168,76,.15);}
+.prod-body{padding:20px 22px;}
+.prod-tag{font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-d);padding:3px 10px;display:inline-block;margin-bottom:12px;}
+.prod-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cream);line-height:1.3;margin-bottom:8px;}
+.prod-price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.08em;color:var(--gold-l);margin-bottom:12px;}
+.prod-desc{font-size:.85rem;color:rgba(212,184,120,.7);line-height:1.75;font-weight:300;margin-bottom:20px;}
+.prod-cta{display:block;width:100%;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:14px;font-family:'Josefin Sans',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-align:center;cursor:pointer;transition:background .2s;}
+.prod-cta:hover{background:rgba(201,168,76,.1);}
+
+/* BONIFICO */
+.bonifico-wrap{background:var(--forest);border-top:1px solid var(--gold-d);border-bottom:1px solid var(--gold-d);}
+.bonifico-card{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.25);padding:28px 22px;}
+.b-row{margin-bottom:24px;}.b-row:last-child{margin-bottom:0;}
+.b-label{font-size:.58rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-d);margin-bottom:5px;}
+.b-value{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream);margin-bottom:10px;word-break:break-all;}
+.btn-copy{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);border:1px solid var(--gold-d);padding:7px 16px;font-family:'Josefin Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.btn-copy:hover{background:rgba(201,168,76,.1);}
+.btn-copy.copied{border-color:#16a34a;color:#4ade80;}
+
+/* CONTACTS */
+.contacts-wrap{background:#060e05;}
+.contacts-card{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.2);padding:28px 22px;}
+.c-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(201,168,76,.1);}
+.c-item:last-child{border-bottom:none;}
+.c-icon{font-size:1.1rem;}
+.c-val{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--cream);}
+
+/* FOOTER */
+footer{background:var(--forest);border-top:1px solid var(--gold-d);padding:36px 22px;text-align:center;}
+.footer-main{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,5vw,1.5rem);letter-spacing:.12em;color:var(--gold-l);margin-bottom:8px;}
+.footer-sub{font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--kraft);opacity:.5;}
+
+/* TOAST */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--forest);color:var(--gold-l);border:1px solid var(--gold-d);padding:10px 22px;font-family:'Josefin Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;z-index:9999;transition:transform .3s ease;white-space:nowrap;box-shadow:var(--sh);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* GB */
+.gb1{background:linear-gradient(135deg,#1a1a2e,#12121f)}
+.gb2{background:linear-gradient(135deg,#2a1a4a,#1a0a30)}
+.gb3{background:linear-gradient(135deg,#0a2a4a,#061828)}
+.gb4{background:linear-gradient(135deg,#0a2a2a,#061818)}
+.gb5{background:linear-gradient(135deg,#4a1a0a,#2a0e06)}
+.gb6{background:linear-gradient(135deg,#4a0a0a,#2a0606)}
+.gb7{background:linear-gradient(135deg,#4a2a0a,#2a1806)}
+.gb8{background:linear-gradient(135deg,#0a2a0a,#061806)}
+.gb9{background:linear-gradient(135deg,#6a3a0a,#3a1e06)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">THE BIG 50 OF LUCKY</span>
+  <div class="nav-links">
+    <a href="#regali" onclick="smoothTo('regali')">Regali</a>
+    <a href="#contribuisci" onclick="smoothTo('contribuisci')">Contribuisci</a>
+  </div>
+</nav>
+
+<!-- GALLERIA LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lb-wrap" onclick="event.stopPropagation()">
+    <button class="lb-close" onclick="closeLightbox()">✕ CHIUDI</button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="prod-modal" id="prodModal" onclick="closeProd()">
+  <div class="prod-sheet" onclick="event.stopPropagation()">
+    <div class="prod-sheet-handle"></div>
+    <button class="prod-sheet-close" onclick="closeProd()">✕ CHIUDI</button>
+    <img class="prod-img" id="prod-img" src="" alt="">
+    <div class="prod-body">
+      <div class="prod-tag" id="prod-tag"></div>
+      <div class="prod-title" id="prod-title"></div>
+      <div class="prod-price" id="prod-price"></div>
+      <div class="prod-desc" id="prod-desc"></div>
+      <button class="prod-cta" onclick="closeProd();smoothTo('contribuisci')">VOGLIO CONTRIBUIRE</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-rays"></div>
+  <div class="hero-sun"></div>
+  <svg class="palms-svg" viewBox="0 0 800 280" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <path d="M80 280 Q70 200 90 140 Q95 100 85 60" stroke="#0d1f0a" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M85 65 Q40 30 10 45 Q50 55 80 80" fill="#0d2a10" opacity=".9"/>
+    <path d="M85 65 Q60 10 90 -10 Q85 30 90 65" fill="#112e14" opacity=".85"/>
+    <path d="M85 65 Q130 20 160 38 Q125 55 90 72" fill="#0d2a10" opacity=".9"/>
+    <path d="M85 65 Q100 0 130 5 Q105 40 90 68" fill="#0a2410" opacity=".8"/>
+    <path d="M85 65 Q30 60 5 80 Q45 72 82 82" fill="#112e14" opacity=".75"/>
+    <path d="M720 280 Q730 190 710 130 Q705 90 718 50" stroke="#0d1f0a" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M718 55 Q760 20 795 35 Q755 48 722 72" fill="#0d2a10" opacity=".9"/>
+    <path d="M718 55 Q740 0 715 -15 Q714 28 716 58" fill="#112e14" opacity=".85"/>
+    <path d="M718 55 Q670 18 640 32 Q678 48 716 70" fill="#0d2a10" opacity=".9"/>
+    <path d="M718 55 Q700 -5 668 0 Q696 36 716 62" fill="#0a2410" opacity=".8"/>
+    <path d="M718 55 Q775 55 800 75 Q760 65 720 80" fill="#112e14" opacity=".75"/>
+    <path d="M160 280 Q152 220 162 180 Q165 155 158 130" stroke="#091508" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M158 133 Q128 110 108 118 Q135 122 156 142" fill="#091508" opacity=".7"/>
+    <path d="M158 133 Q175 105 198 112 Q175 120 158 140" fill="#091508" opacity=".7"/>
+    <path d="M640 280 Q648 215 638 172 Q635 148 642 122" stroke="#091508" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M642 125 Q672 102 692 110 Q665 116 644 135" fill="#091508" opacity=".7"/>
+    <path d="M642 125 Q620 100 598 107 Q622 115 642 133" fill="#091508" opacity=".7"/>
+    <path d="M0 265 Q200 255 400 258 Q600 262 800 258 L800 280 L0 280 Z" fill="#1a0e08" opacity=".7"/>
+    <path d="M0 270 Q200 262 400 265 Q600 268 800 264 L800 280 L0 280 Z" fill="#120a06" opacity=".8"/>
+  </svg>
+  <div class="hero-ocean"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+    <div style="position:relative;display:inline-block;">
+      <div class="sticker-left"><p>NON È UN COMPLEANNO,<br>È UN EVENTO!</p></div>
+      <div class="badge-right">
+        <p>UN EVENTO TROPICALE DI RARA ELEGANZA E</p>
+        <strong>DISCUTIBILE SOBRIETÀ</strong><p>★</p>
+      </div>
+      <div class="title-the">THE</div>
+      <div class="title-big">BIG</div>
+    </div>
+    <div class="title-of">of</div>
+    <div class="title-50">50</div>
+    <div class="title-lucky">Lucky</div>
+    <div class="hero-name">
+      <div class="n1">FORTUNATO</div>
+      <div class="n2">compie 50 anni!</div>
+    </div>
+    <div class="hero-info">
+      <div class="info-pill"><span class="lbl">Dove</span><span class="val">I Giardini di Villa Veronica<br>Via Dante 2a<br>Certosa di Pavia</span></div>
+      <div class="info-pill"><span class="lbl">Quando</span><span class="val">5 Luglio 2026</span></div>
+      <div class="info-pill"><span class="lbl">Ore</span><span class="val">17:00</span></div>
+    </div>
+    <div class="hero-scroll">▾</div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-wrap section-wrap">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Conto alla rovescia</div>
+      <div class="section-title">Manca poco!</div>
+    </div>
+    <div class="countdown-grid reveal">
+      <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-lbl">Giorni</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">Ore</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-minutes">00</span><span class="cd-lbl">Minuti</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-seconds">00</span><span class="cd-lbl">Secondi</span></div>
+    </div>
+    <div class="gold-divider reveal"><div class="gold-divider-line"></div><div class="gold-divider-gem"></div><div class="gold-divider-line"></div></div>
+    <div class="signpost-grid reveal">
+      <div class="signpost"><div class="sp-dot"></div>Zero stress</div>
+      <div class="signpost"><div class="sp-dot"></div>Tanto relax</div>
+      <div class="signpost"><div class="sp-dot"></div>Buona compagnia</div>
+      <div class="signpost"><div class="sp-dot"></div>Drink a volontà</div>
+      <div class="signpost"><div class="sp-dot"></div>È festa assicurata</div>
+    </div>
+    <div class="quote-block reveal"><q>In questa casa faccio sempre tutto io</q></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-wrap section-wrap" id="galleria">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Momenti speciali</div>
+      <div class="section-title">La galleria</div>
+      <p class="section-sub">50 anni di sorrisi, avventure e famiglia</p>
+    </div>
+    <div class="gallery-grid reveal" id="gallery"></div>
+  </div>
+</div>
+
+<!-- GIFTS -->
+<div class="gifts-wrap section-wrap" id="regali">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Lista regali</div>
+      <div class="section-title">Cosa regalare</div>
+      <p class="section-sub">Tocca una card per scoprire i dettagli del regalo.</p>
+    </div>
+    <div class="gifts-grid" id="gifts-grid"></div>
+  </div>
+</div>
+
+<!-- CONTRIBUTO -->
+<div class="bonifico-wrap section-wrap" id="contribuisci">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Come contribuire</div>
+      <div class="section-title">Bonifico</div>
+      <p class="section-sub">Effettua un bonifico con i dati qui sotto. Grazie di cuore!</p>
+    </div>
+    <div class="bonifico-card reveal">
+      <div class="b-row">
+        <div class="b-label">IBAN</div>
+        <div class="b-value" id="val-iban">IT77P0103011359000008536833</div>
+        <button class="btn-copy" onclick="copyText('val-iban',this)">&#9635; Copia IBAN</button>
+      </div>
+      <div class="b-row">
+        <div class="b-label">Intestatario</div>
+        <div class="b-value" id="val-intestatario">Fortunato Stranges</div>
+        <button class="btn-copy" onclick="copyText('val-intestatario',this)">&#9635; Copia Intestatario</button>
+      </div>
+      <div class="b-row">
+        <div class="b-label">Causale</div>
+        <div class="b-value" id="val-causale">Regalo 50 anni Fortunato</div>
+        <button class="btn-copy" onclick="copyText('val-causale',this)">&#9635; Copia Causale</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">Grazie per contribuire a rendere speciali i 50 anni di Fortunato</div>
+  <div class="footer-sub">5 Luglio 2026 · Certosa di Pavia</div>
+</footer>
+
+<script>
+/* SMOOTH NAV - prevents default and scrolls internally */
+function smoothTo(id){
+  event && event.preventDefault();
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const id=this.getAttribute('href').replace('#','');
+    smoothTo(id);
+  });
+});
+
+/* COUNTDOWN */
+function tick(){
+  const t=new Date('2026-07-05T17:00:00'),n=new Date(),d=t-n;
+  if(d<=0){['cd-days','cd-hours','cd-minutes'].forEach(i=>document.getElementById(i).textContent='00');document.getElementById('cd-seconds').textContent='🎉';return;}
+  document.getElementById('cd-days').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-minutes').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-seconds').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0');
+}
+tick(); setInterval(tick,1000);
+
+/* GALLERY — foto reali dagli upload */
+const photos=[
+  {src:'Papà da bambino 2.jpeg', label:'Già sapeva di essere speciale 👶', tall:true},
+  {src:'Papà da bambino 1.jpeg', label:'Le bib più belle degli anni \'70 🎀'},
+  {src:'Papà da bambino 3.jpeg', label:'Quel sorriso non è cambiato 😄'},
+  {src:'Papà da giovane.jpeg', label:'Il giovane Lucky — stile da vendere 😎', tall:true},
+  {src:'comunione di qualcuno.jpeg', label:'Elegante come sempre ⛪'},
+  {src:'Capodanno in Canada nel 2018.jpeg', label:'Capodanno in Canada 🎉', wide:true},
+  {src:'In giro per Toronto nel 2018.jpeg', label:'Toronto sotto zero, sorrisi al massimo 🥶', wide:true},
+  {src:'Famiglia in piscina.jpeg', label:'Splash! La famiglia ama l\'acqua 🏊'},
+  {src:'Matrimonio cugino mamma.jpeg', label:'Al matrimonio in grande stile 💍'},
+  {src:'Famiglia a Disneyland Paris.jpeg', label:'Disneyland Parigi — il Re dei parchi 🏰', wide:true},
+  {src:'Famiglia a Massa.jpeg', label:'A Massa, selfie di famiglia 🌊'},
+  {src:'Ferragosto 2023.jpeg', label:'Ferragosto 2023 — la tavolata lunga un km 🍉'},
+  {src:'Fratelli Stranges allo stadio del PSG.jpeg', label:'Ici c\'est Paris! ⚽', tall:true},
+  {src:'Papà che griglia 1.jpeg', label:'Il Re della griglia 🥩👑'},
+  {src:'Papà al mare con Oscar.jpeg', label:'Oscar e Lucky — duo imbattibile 🐶'},
+  {src:'Papà con Oscar (suo vero amore).jpeg', label:'Il suo vero amore, lo sappiamo tutti ❤️'},
+  {src:'17 anni di Nicola.jpeg', label:'I 17 anni di Nicola — tutta la famiglia assieme 🎂', wide:true},
+  {src:'Stranges al completo post partita a basket.jpeg', label:'Post-partita a basket — Stranges al completo 🏀'},
+];
+
+/* Normalizza nome file per il path */
+function photoPath(fn){
+  return encodeURI(fn);
+}
+
+const gallery=document.getElementById('gallery');
+photos.forEach(p=>{
+  const div=document.createElement('div');
+  div.className='g-item reveal'+(p.tall?' tall':'')+(p.wide?' wide':'');
+  div.innerHTML=`<div class="g-inner"><img src="${photoPath(p.src)}" alt="${p.label}" loading="lazy"><div class="g-overlay"><span class="g-label">${p.label}</span></div></div>`;
+  div.addEventListener('click',()=>{
+    document.getElementById('lb-img').src=photoPath(p.src);
+    document.getElementById('lb-caption').textContent=p.label;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow='hidden';
+  });
+  gallery.appendChild(div);
+});
+
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow='';
+}
+
+/* GIFTS */
+const gifts=[
+  {
+    tag:'Tech',
+    title:'Apple Watch Series 11 GPS 46mm',
+    shortTitle:'Apple Watch Series 11',
+    desc:'Per tenere sotto controllo salute, attività e ogni avventura. Rileva pressione sanguigna, ECG, saturazione ossigeno e molto altro. Display Retina sempre attivo, GPS integrato.',
+    cost:'da 459€',
+    bg:'gb1',
+    img:'apple-watch-series-11__cim89z1i9spe_og.png',
+    imgFallback:'apple-watch-series-11__cim89z1i9spe_og.png'
+  },
+  {
+    tag:'Musica',
+    title:'LG XBOOM XL9T Party Speaker',
+    shortTitle:'LG XBOOM XL9T',
+    desc:'Cassa bluetooth portatile con maniglia. 1000W di potenza, woofer 8\'\' per bassi devastanti, display LED personalizzabile con testi e animazioni. Karaoke integrato. La festa non si ferma mai.',
+    cost:'da 430€',
+    bg:'gb2',
+    img:'lg-xboom-xl9t.jpg',
+    imgFallback:'lg-xboom-xl9t.jpg'
+  },
+  {
+    tag:'New York',
+    title:'Top of the Rock – Tutta la famiglia',
+    shortTitle:'Top of the Rock NYC',
+    desc:'Dalla terrazza del Rockefeller Center si vede l\'intera Manhattan: Empire State Building, Central Park, Brooklyn Bridge. L\'unico osservatorio con quella prospettiva unica. Per tutti e 6.',
+    cost:'~38$ a persona',
+    bg:'gb3',
+    img:'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=700&h=400&fit=crop'
+  },
+  {
+    tag:'New York',
+    title:'Crociera al tramonto – Manhattan',
+    shortTitle:'Sunset Cruise Manhattan',
+    desc:'90 minuti sul fiume Hudson al tramonto. Skyline dorato di Manhattan, Statua della Libertà, Brooklyn Bridge illuminato. Vista da bordo con musica, aperitivo e atmosfera magica.',
+    cost:'~44$ adulto',
+    bg:'gb4',
+    img:'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=700&h=400&fit=crop'
+  },
+  {
+    tag:'New York',
+    title:'NY CityPASS – 5 attrazioni iconiche',
+    shortTitle:'New York CityPASS',
+    desc:'Empire State Building, Museo di Storia Naturale, Top of the Rock e altre 2 attrazioni a scelta. Risparmio fino al 42% rispetto ai biglietti singoli. Valido 9 giorni dall\'attivazione.',
+    cost:'154$ a persona',
+    bg:'gb5',
+    img:'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=700&h=400&fit=crop'
+  },
+  {
+    tag:'Cena',
+    title:'Cena speciale in famiglia a New York',
+    shortTitle:'Cena di famiglia a NYC',
+    desc:'Una serata da ricordare in un ristorante di Manhattan per tutta la famiglia. Il viaggio più bello merita la cena più bella. Steakhouse, seafood o cucina italiana — la scelta è vostra.',
+    cost:'Fondo aperto',
+    bg:'gb6',
+    img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&h=400&fit=crop'
+  },
+  {
+    tag:'Esperienze',
+    title:'Fondo esperienze in famiglia',
+    shortTitle:'Fondo esperienze',
+    desc:'Per rendere il viaggio ancora più ricco: Broadway, musei extra, gite fuori porta, attività in loco e tutto quello che si scopre camminando per New York. Ogni esperienza conta.',
+    cost:'Fondo aperto',
+    bg:'gb7',
+    img:'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&h=400&fit=crop'
+  },
+  {
+    tag:'Ricordi',
+    title:'Fondo souvenir e ricordi',
+    shortTitle:'Fondo souvenir',
+    desc:'Magliette, snow globe, gadget di New York, refrigerator magnets — piccoli ricordi inutili ma bellissimi da portare a casa di una grande avventura. Ogni viaggio lascia un segno.',
+    cost:'Fondo aperto',
+    bg:'gb8',
+    img:'https://images.unsplash.com/photo-1569701813229-33284b643e3c?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1569701813229-33284b643e3c?w=700&h=400&fit=crop'
+  },
+  {
+    tag:'Contributo libero',
+    title:'Contributo libero per il viaggio',
+    shortTitle:'Contributo libero',
+    desc:'Ogni contributo, grande o piccolo, aiuta a rendere speciale questa avventura americana. Nessun importo minimo — l\'importante è il gesto. Grazie di cuore da tutta la famiglia Stranges.',
+    cost:'Qualsiasi cifra',
+    bg:'gb9',
+    img:'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&h=400&fit=crop',
+    imgFallback:'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&h=400&fit=crop',
+    special:true
+  },
+];
+
+const gg=document.getElementById('gifts-grid');
+gifts.forEach(g=>{
+  const c=document.createElement('div');
+  c.className='gift-card reveal'+(g.special?' special':'');
+  c.innerHTML=`
+    <div class="gift-img ${g.bg}">
+      <img src="${g.img}" alt="${g.shortTitle}" loading="lazy" onerror="this.src='${g.imgFallback}'">
+      <span class="gift-badge">${g.cost}</span>
+    </div>
+    <div class="gift-body">
+      <div class="gift-title">${g.shortTitle}</div>
+      <div class="gift-desc">${g.desc.substring(0,80)}…</div>
+      <button class="btn-gift">Scopri di più</button>
+    </div>`;
+  c.addEventListener('click',()=>openProd(g));
+  gg.appendChild(c);
+});
+
+function openProd(g){
+  document.getElementById('prod-img').src=g.img;
+  document.getElementById('prod-img').onerror=function(){this.src=g.imgFallback;};
+  document.getElementById('prod-tag').textContent=g.tag;
+  document.getElementById('prod-title').textContent=g.title;
+  document.getElementById('prod-price').textContent=g.cost;
+  document.getElementById('prod-desc').textContent=g.desc;
+  document.getElementById('prodModal').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeProd(){
+  document.getElementById('prodModal').classList.remove('active');
+  document.body.style.overflow='';
+}
+
+/* COPY */
+function copyText(id,btn){
+  const t=document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(t).then(()=>{
+    btn.classList.add('copied');btn.textContent='✓ Copiato';
+    showToast('✓ Copiato negli appunti');
+    setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML='&#9635; Copia';},2000);
+  }).catch(()=>showToast('❌ Copia non riuscita'));
+}
+
+/* TOAST */
+let tt;
+function showToast(m){
+  const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');
+  clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+/* REVEAL */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.reveal').forEach((c,i)=>setTimeout(()=>c.classList.add('visible'),i*55));
+    }
+  });
+},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
